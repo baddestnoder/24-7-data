@@ -79,6 +79,8 @@ router.get("/purchase", async(req, res)=>{
 			}
 
 			const contactInfo = await ContactDB.find();
+
+			console.log(contactInfo);
 			
 			res.render("purchase.ejs", {contactInfo: contactInfo[contactInfo.length - 1], data: thisAccount, isUser, purchase: thisAccount.purchase, reward:thisAccount.reward});
 		}else{
